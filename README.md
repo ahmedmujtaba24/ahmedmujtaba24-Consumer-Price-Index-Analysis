@@ -14,7 +14,8 @@ This project analyzes key economic indicators for India, including:
 - **`Project Overview/`**: Goals, scope, and vision of the project.
 - **`Data/`**: 
    - **`Data Source/`**: Raw data files and primary sources.  
-    - [datasetsource.pdf](Data/Data%20Source/datasetsource.pdf)  
+    - - **`Data Source/`**: Raw data files and primary sources.  
+    - [datasetsource.pdf](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/datasetsource.pdf)   
  - **`Processed Data/`**: Cleaned and prepped data for analysis.  
     - [Golstats.xlsx](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/Golstats.xlsx) 
 - **`Methodology/`**: Detailed approach to handling missing data and analysis.
