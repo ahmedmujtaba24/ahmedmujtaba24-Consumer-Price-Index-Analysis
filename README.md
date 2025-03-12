@@ -14,9 +14,9 @@ This project analyzes key economic indicators for India, including:
 - **`Project Overview/`**: Goals, scope, and vision of the project.
 - **`Data/`**: 
   - **`Data Source/`**: Raw data files and primary sources.
-    datasetsource.pdf
+    -datasetsource.pdf
   - **`Processed Data/`**: Cleaned and prepped data for analysis.
-    Golstats.pdf
+    -Golstats.xlsx
 - **`Methodology/`**: Detailed approach to handling missing data and analysis.
 - **`Code/`**: 
   - **`Data Frame/`**: Scripts for organizing data.
