@@ -36,6 +36,10 @@ This project analyzes key economic indicators for India, including:
 - **Wages and LFPR**: What are the trends in wages and labor force participation?
 - **Economic Events**: How did major events (e.g., 1991 liberalization, 2020 pandemic) impact the economy?
 
+- ## 📜 License  
+This project is licensed under the [MIT License](LICENSE).  
+
+
 ---
 
 ## 🔗 Data Sources
