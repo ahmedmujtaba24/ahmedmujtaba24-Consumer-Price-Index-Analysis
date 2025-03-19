@@ -25,6 +25,13 @@ This page contains all the raw data sources and their respective links. Some fil
 
 ---
 
+### **GDP Growth Data**
+- [RBI GDP Growth Data](https://data.rbi.org.in/BOE/OpenDocument/2409211437/PlatformServices/service/app/error.do)  
+- [Capital Mind Bank FD Rates](https://premium.capitalmind.in/2020/09/chart-of-the-day-bank-fd-rates-from-1976/)  
+- [World Bank GDP Growth Data](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/gdp_growth_worldbank.xls)
+
+---
+
 ## Additional Data
 
 - [Golstats Data](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/Golstats.xlsx)  
