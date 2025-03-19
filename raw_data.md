@@ -22,10 +22,6 @@ This page contains all the raw data sources and their respective links. Some fil
 ### **World Bank**
 - [World Bank Inflation Data](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/inflation_data_worldbank.xls)
 
-### **Additional Data**
-- [Golstats Data](#)  
-- [Dataset Source](#)  
-
 
 ---
 
