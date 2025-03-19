@@ -8,7 +8,21 @@ This page contains all the raw data sources and their respective links. Some fil
 
 - [Mospi CPI Data](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/ahmedmujtaba24-raw-data/CPI_Mospi.pdf)  
 - [World Bank GDP Growth Data](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/ahmedmujtaba24-raw-data/GDP_growth_worldbank.xls)  
-- [Mospi CPI Data (Duplicate)](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/ahmedmujtaba24-raw-data/CPI_Mospi.pdf)  
+- [Mospi CPI Data (Duplicate)](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/ahmedmujtaba24-raw-data/CPI_Mospi.pdf)
+
+- # Consumer Price Index Analysis
+
+## Inflation 
+
+### **CPI Data**
+- [Mospi CPI Data](#)  
+- [World Bank GDP Growth Data](#)  
+- [Mospi CPI Data (Duplicate)](#)  
+
+### **Additional Data**
+- [Golstats Data](#)  
+- [Dataset Source](#)  
+
 
 ---
 
