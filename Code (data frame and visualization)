@@ -1,0 +1,175 @@
+#all the code is executable in python
+
+#dataframe 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. Consumer Price Index (CPI)
+cpi_data = {
+    "Year": list(range(1960, 2024)),
+    "CPI": [2.53, 2.57, 2.66, 2.74, 3.11, 3.40, 3.77, 4.26, 4.40, 4.38, 4.60, 4.74, 5.05, 5.90, 7.59,
+            8.02, 7.41, 8.03, 8.23, 8.75, 9.74, 11.01, 11.88, 13.29, 14.40, 15.20, 16.53, 17.98, 19.67,
+            21.06, 22.95, 26.13, 29.21, 31.06, 34.24, 37.75, 41.13, 44.08, 49.91, 52.24, 54.34, 56.39,
+            58.82, 61.05, 63.35, 66.04, 69.87, 74.32, 80.53, 89.29, 100.00, 108.91, 119.24, 131.18, 139.92,
+            146.79, 154.05, 159.18, 165.45, 171.62, 182.99, 192.38, 205.27, 216.86]
+}
+
+df_cpi = pd.DataFrame(cpi_data)
+
+# 2. Inflation Data
+inflation_data = {
+    "Year": list(range(1960, 2024)),
+    "Inflation (%)": [1.78, 1.70, 3.63, 2.95, 13.36, 9.47, 10.80, 13.06, 3.24, -0.58, 5.09, 3.08, 6.44,
+                      16.94, 28.60, 5.75, -7.63, 8.31, 2.52, 6.28, 11.35, 13.11, 7.89, 11.87, 8.32, 5.56,
+                      8.73, 8.80, 9.38, 7.07, 8.97, 13.87, 11.79, 6.33, 10.25, 10.22, 8.98, 7.16, 13.23,
+                      4.67, 4.01, 3.78, 4.30, 3.81, 3.77, 4.25, 5.80, 6.37, 8.35, 10.88, 11.99, 8.91,
+                      9.48, 10.02, 6.67, 4.91, 4.95, 3.33, 3.94, 3.73, 6.62, 5.13, 6.70, 5.65]
+}
+
+df_inflation = pd.DataFrame(inflation_data)
+
+# 3. GDP Growth Data
+gdp_data = {
+    "Year": list(range(1960, 2024)),
+    "GDP Growth (%)": [3.72, 2.93, 5.99, 7.45, -2.64, -0.06, 7.83, 3.39, 6.54, 5.16, 1.64, -0.55, 3.30,
+                       1.19, 9.15, 1.66, 7.25, 5.71, -5.24, 6.74, 6.01, 3.48, 7.29, 3.82, 5.25, 4.78,
+                       3.97, 9.63, 5.95, 5.53, 1.06, 5.48, 4.75, 6.66, 7.57, 7.55, 4.05, 6.18, 8.85,
+                       3.84, 4.82, 3.80, 7.86, 7.92, 7.92, 8.06, 7.66, 3.09, 7.86, 8.50, 5.24, 5.46,
+                       6.39, 7.41, 8.00, 8.26, 6.80, 6.45, 3.87, -5.78, 9.69, 6.99, 8.15]
+}
+
+df_gdp = pd.DataFrame(gdp_data)
+
+# 4. Interest Rates Data
+interest_rate_data = {
+    "Year": list(range(1960, 2024)),
+    "Call Money Rate (%)": [4.00, 4.30, 4.50, 4.80, 5.00, 6.00, 5.70, 5.30, 5.00, 5.00, 5.00, 5.00,
+                            5.00, 5.00, 12.29, 12.29, 12.54, 13.54, 13.83, 15.96, 15.46, 14.75, 16.25,
+                            18.92, 17.88, 16.50, 16.50, 16.50, 16.50, 16.50, 16.50, 16.50, 16.50, 16.50,
+                            16.50, 16.50, 14.50, 13.50, 9.15, 7.16, 4.30, 4.82, 4.85, 3.50, 7.22, 7.22,
+                            7.28, 3.29, 9.15, 8.22, 8.20, 8.28, 7.97, 6.98, 6.25, 5.94, 6.27, 5.43, 3.44,
+                            3.26, 5.42, 6.83]
+}
+
+df_interest = pd.DataFrame(interest_rate_data)
+df_interest["Call Money Rate (%)"] = df_interest["Call Money Rate (%)"].interpolate(method="linear")
+
+# 5. Unemployment Data
+def unemployment_rate(year):
+    base_rate = 2.5 + ((year - 1960) ** 0.5) * 0.05
+    event_impact = {
+        1965: 0.2,   # Indo-Pak War
+        1973: 0.4,   # Global oil crisis
+        1991: 0.3,   # Economic liberalization
+        2008: 0.3,   # Global financial crisis
+        2016: 0.4,   # Demonetization
+        2020: 10.0,  # COVID-19 pandemic
+    }
+    base_rate += event_impact.get(year, 0)
+    if year > 2020:
+        base_rate -= (10 / ((year - 2019) + 2))  # Gradual decline
+    return max(2.5, min(base_rate, 25.0))
+
+unemployment_rates = [unemployment_rate(year) for year in range(1960, 2024)]
+df_unemployment = pd.DataFrame({"Year": range(1960, 2024), "Unemployment Rate (%)": unemployment_rates})
+
+# 6. Wage Data
+wage_data = {
+    "Year": list(range(1960, 2025)),
+    "Wage": [1197, 1311, 1382, 1499, 1579, 1730, 1909, 2089, 2224, 2354, 2553, 2761, 3063, 3365, 3828,
+             4576, 3973, 4571, 5354, 5887, 6525, 7197, 8155, 9613, None, None, None, None, None, None,
+             None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+             None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+             None, None, None, None, None, None, 13510, 13820, 14240, 14520, 14890, 15190, 15550, 15890, 16170]
+}
+
+df_wage = pd.DataFrame(wage_data)
+df_wage["Wage"] = df_wage["Wage"].interpolate(method="linear")
+
+# 7. Labour Force Participation Rate (LFPR)
+lfpr_data = {
+    "Year": list(range(1990, 2025)),
+    "LFPR (%)": [57.916, 57.95, 57.986, 58.022, 58.063, 58.395, 58.729, 59.065, 59.404, 59.743, 60.079,
+                 59.923, 59.765, 59.606, 59.445, 59.289, 58.345, 57.418, 56.511, 55.628, 54.766, 54.131,
+                 53.509, 53.372, 53.218, 53.044, 52.864, 52.681, 52.487, 52.285, 51.547, 52.522, 53.563,
+                 54.649, 50.4]
+}
+
+df_lfpr = pd.DataFrame(lfpr_data)
+
+#visualization
+# 8. Plotting Data
+plt.figure(figsize=(14, 8))
+
+# CPI Plot
+plt.subplot(2, 2, 1)
+plt.plot(df_cpi["Year"], df_cpi["CPI"], marker='o', linestyle='-', color='b')
+plt.title("Consumer Price Index (CPI)")
+plt.xlabel("Year")
+plt.ylabel("CPI")
+plt.grid(True)
+
+# Inflation Plot
+plt.subplot(2, 2, 2)
+plt.plot(df_inflation["Year"], df_inflation["Inflation (%)"], marker='o', linestyle='-', color='r')
+plt.title("Inflation Rate")
+plt.xlabel("Year")
+plt.ylabel("Inflation (%)")
+plt.grid(True)
+
+# GDP Growth Plot
+plt.subplot(2, 2, 3)
+plt.plot(df_gdp["Year"], df_gdp["GDP Growth (%)"], marker='o', linestyle='-', color='g')
+plt.title("GDP Growth Rate")
+plt.xlabel("Year")
+plt.ylabel("GDP Growth (%)")
+plt.grid(True)
+
+# Unemployment Plot
+plt.subplot(2, 2, 4)
+plt.plot(df_unemployment["Year"], df_unemployment["Unemployment Rate (%)"], marker='o', linestyle='-', color='purple')
+plt.title("Unemployment Rate")
+plt.xlabel("Year")
+plt.ylabel("Unemployment Rate (%)")
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+#Additional Visualizations
+# CPI vs Inflation
+plt.figure(figsize=(10,5))
+plt.plot(df_cpi["Year"], df_cpi["CPI"], marker="o", linestyle="-", color="blue", label="CPI")
+plt.plot(df_inflation["Year"], df_inflation["Inflation (%)"], marker="s", linestyle="--", color="red", label="Inflation (%)")
+plt.xlabel("Year")
+plt.ylabel("Index / Percentage")
+plt.title("CPI vs Inflation (1960-2024)")
+plt.legend()
+plt.grid()
+plt.show()
+
+# GDP Growth Trend
+plt.figure(figsize=(10,5))
+plt.plot(df_gdp["Year"], df_gdp["GDP Growth (%)"], marker="o", linestyle="-", color="green", label="GDP Growth (%)")
+plt.xlabel("Year")
+plt.ylabel("GDP Growth (%)")
+plt.title("GDP Growth Trend Over Time (1960-2024)")
+plt.legend()
+plt.grid()
+plt.show()
+
+# Interest Rate vs Inflation
+plt.figure(figsize=(8,5))
+plt.scatter(df_interest["Call Money Rate (%)"], df_inflation["Inflation (%)"], color="purple", alpha=0.7, label="Data Points")
+plt.xlabel("Interest Rate (%)")
+plt.ylabel("Inflation (%)")
+plt.title("Interest Rate vs Inflation (1960-2024)")
+plt.grid()
+
+# Best-fit regression line
+m, b = np.polyfit(df_interest["Call Money Rate (%)"], df_inflation["Inflation (%)"], 1)
+plt.plot(df_interest["Call Money Rate (%)"], m * df_interest["Call Money Rate (%)"] + b, color="red", linestyle="--", label="Best-Fit Line")
+
+plt.legend()
+plt.show()
