@@ -25,9 +25,10 @@ This project analyzes key economic indicators for India, including:
 - **`Code/`**:  
    - **`Data Frame/`**: Scripts for organizing data.  
    - **`Missing Value Handling/`**: Scripts for interpolating missing values.
-- **`Report/`**: Final findings and insights.
-   - **Visual Report**: [View Visuals](https://drive.google.com/file/d/19Ofx4QLmIJAC686UNN6n4FuUPUqNQtal/view?usp=drive_link)
-- **`Visuals/`**: Charts and graphs showcasing trends.
+- **`Report/`**: Final findings and insights.  
+  - **[Report](https://drive.google.com/file/d/1kAkN1ch3SVy5YpS5PNqdQxGRywwwf7Mn/view?usp=drive_link)**  
+- **`Visuals/`**: Charts and graphs showcasing trends.  
+  - **[Visual Report](https://drive.google.com/file/d/19Ofx4QLmIJAC686UNN6n4FuUPUqNQtal/view?usp=drive_link)**  
 
 ---
 
