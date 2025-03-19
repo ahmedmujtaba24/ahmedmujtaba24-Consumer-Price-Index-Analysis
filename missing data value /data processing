@@ -1,0 +1,75 @@
+# 1. Unemployment Rate Assumptions
+def unemployment_rate(year):
+    base_rate = 2.5 + ((year - 1960) ** 0.5) * 0.05  # Base rate calculation
+    event_impact = {
+        1965: 0.2,   # Indo-Pak War
+        1973: 0.4,   # Global oil crisis
+        1991: 0.3,   # Economic liberalization
+        2008: 0.3,   # Global financial crisis
+        2016: 0.4,   # Demonetization
+        2020: 10.0,  # COVID-19 pandemic
+    }
+    base_rate += event_impact.get(year, 0)  # Add impact of major events
+    if year > 2020:
+        base_rate -= (10 / ((year - 2019) + 2))  # Gradual decline post-2020
+    return max(2.5, min(base_rate, 25.0))  # Ensure rate stays within bounds
+
+# Generate unemployment rates based on assumptions
+unemployment_rates = [unemployment_rate(year) for year in range(1960, 2024)]
+df_unemployment = pd.DataFrame({"Year": range(1960, 2024), "Unemployment Rate (%)": unemployment_rates})
+
+# 2. Wage Data Assumptions
+wage_data = {
+    "Year": list(range(1960, 2025)),
+    "Wage": [1197, 1311, 1382, 1499, 1579, 1730, 1909, 2089, 2224, 2354, 2553, 2761, 3063, 3365, 3828,
+             4576, 3973, 4571, 5354, 5887, 6525, 7197, 8155, 9613, None, None, None, None, None, None,
+             None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+             None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+             None, None, None, None, None, None, 13510, 13820, 14240, 14520, 14890, 15190, 15550, 15890, 16170]
+}
+
+# Interpolate missing wage data
+df_wage = pd.DataFrame(wage_data)
+df_wage["Wage"] = df_wage["Wage"].interpolate(method="linear")
+
+# 3. Interest Rate Assumptions
+# Missing interest rate data is interpolated linearly
+df_interest["Call Money Rate (%)"] = df_interest["Call Money Rate (%)"].interpolate(method="linear")
+
+---
+
+import numpy as np
+import pandas as pd
+
+years = np.arange(1960, 2024)
+
+def unemployment_rate(year):
+   
+    base_rate = 2.5 + ((year - 1960) ** 0.5) * 0.05
+
+      event_impact = {
+        1965: 0.2,   # Indo-Pak War
+        1973: 0.4,   # Global oil crisis (lowered from 0.5)
+        1991: 0.3,   # Economic liberalization (lowered from 0.5)
+        2008: 0.3,   # Global financial crisis (less severe for India)
+        2016: 0.4,   # Demonetization (marginally adjusted)
+        2020: 10.0,  # COVID-19 pandemic (lowered from 15.0)
+    }
+
+     base_rate += event_impact.get(year, 0)
+
+      if year > 2020:
+        base_rate -= (10 / ((year - 2019) + 2))  # Gradual decline instead of -1% per year
+
+  
+    return max(2.5, min(base_rate, 25.0))
+
+unemployment_rates = [unemployment_rate(year) for year in years]
+
+df_unemployment = pd.DataFrame({"Year": years, "Unemployment Rate (%)": unemployment_rates})
+
+df_unemployment.to_csv("unemployment_data_fixed.csv", index=False)
+
+print(df_unemployment.head(10))  # Show first 10 years
+
+---
