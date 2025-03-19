@@ -1,44 +1,78 @@
-# Raw Data
+# Economic Indicators Analysis 📊
 
-This page contains all the raw data sources and their respective links. Some files may not appear due to permission reasons; however, the link to those is provided in [Data Source](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/datasetsource.pdf).
+This repository contains structured data and analysis on key economic indicators such as **CPI, Inflation, Interest Rates, Unemployment, Wages, and LFPR** (Labour Force Participation Rate). 
 
----
-
-## CPI Data
-
-- [Mospi CPI Data](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/ahmedmujtaba24-raw-data/CPI_Mospi.pdf)  
-- [World Bank GDP Growth Data](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/ahmedmujtaba24-raw-data/GDP_growth_worldbank.xls)  
-- [Mospi CPI Data (Duplicate)](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/ahmedmujtaba24-raw-data/CPI_Mospi.pdf)
-
-## Inflation 
-
-### **Reserve Bank of India (RBI)**
-- [RBI Inflation Data - Link 1](https://data.rbi.org.in/BOE/OpenDocument/2409211840/OpenDocument/opendoc/openDocument.jsp?logonSuccessful=true&shareId=0)
-- [RBI Inflation Data - Link 2](https://data.rbi.org.in/BOE/OpenDocument/2409211840/OpenDocument/opendoc/openDocument.jsp?logonSuccessful=true&shareId=1)
-
-### **Ministry of Statistics and Programme Implementation (MoSPI)**
-- [Compendium of Datasets and Registries in India 2024](https://www.mospi.gov.in/sites/default/files/Compendium_of_Datasets_and_Registries_in_India_2024.pdf)
-
-### **World Bank**
-- [World Bank Inflation Data](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/inflation_data_worldbank.xls)
-
+All data sources are **official and authoritative**, primarily from **RBI, MOSPI, World Bank, ILO, and Government Reports**.
 
 ---
 
-### **GDP Growth Data**
-- [RBI GDP Growth Data](https://data.rbi.org.in/BOE/OpenDocument/2409211437/PlatformServices/service/app/error.do)  
-- [Capital Mind Bank FD Rates](https://premium.capitalmind.in/2020/09/chart-of-the-day-bank-fd-rates-from-1976/)  
-- [World Bank GDP Growth Data](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/gdp_growth_worldbank.xls)
+## ** 1. Consumer Price Index (CPI)**
+- **Reserve Bank of India (Primary Source):**  
+  - [RBI CPI Data](https://data.rbi.org.in/BOE/OpenDocument/2409211437/OpenDocument/opendoc/openDocument.jsp?logonSuccessful=true&shareId=1)  
+- **Ministry of Statistics and Programme Implementation (MOSPI) (Primary Source):**  
+  - [MOSPI CPI Report](https://www.mospi.gov.in/sites/default/files/publication_reports/Report_TACon%20SPCL_on_BaseRevision_CPI_4mar15.pdf)  
+- **World Bank (Cross Reference):**  
+  - [World Bank CPI Dataset](https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=IN)  
 
 ---
 
-## Additional Data
-
-- [Golstats Data](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/Golstats.xlsx)  
-- [Dataset Source](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/datasetsource.pdf)  
+## ** 2. Inflation**
+- **World Bank (Reference & Missing Data):**  
+  - [World Bank Inflation Data](https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?end=2023&locations=IN&start=1960&view=chart)  
+- **Reserve Bank of India (Primary Source):**  
+  - [RBI Inflation Data](https://data.rbi.org.in/BOE/OpenDocument/2409211437/OpenDocument/opendoc/openDocument.jsp?logonSuccessful=true&shareId=1)  
 
 ---
 
-### Notes:
-- Ensure you have the necessary permissions to access the files.
-- If a file is not accessible, refer to the [Data Source](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/datasetsource.pdf) for more details.
+## ** 3. Interest Rates**
+- **World Bank (Cross Reference & Missing Data):**  
+  - [World Bank Interest Rate Data](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?end=2023&locations=IN&start=1961)  
+- **Reserve Bank of India (Primary Source):**  
+  - [RBI Interest Rate Data](https://data.rbi.org.in/BOE/OpenDocument/2409211437/OpenDocument/opendoc/openDocument.jsp?logonSuccessful=true&shareId=9)  
+- **Capital Mind (For Missing Data):**  
+  - [Capital Mind Bank FD Rates (1976-Present)](https://premium.capitalmind.in/2020/09/chart-of-the-day-bank-fd-rates-from-1976/)  
+
+---
+
+## ** 4. Unemployment Rate**
+- **Ministry of Labour and Employment, India (Primary Source):**  
+  - [Website](https://labour.gov.in/) (Look for **PLFS** & **EUS** Reports)  
+- **National Statistical Office (NSO) (Primary Source):**  
+  - [NSO Employment Data](https://mospi.gov.in/)  
+- **World Bank (Cross Reference & Missing Data):**  
+  - [World Bank Unemployment Data](https://data.worldbank.org/)  
+- **International Labour Organization (ILO) (Cross Reference & Missing Data):**  
+  - [ILO Labour Statistics](https://www.ilo.org/)  
+- **Reserve Bank of India (RBI) (Primary Source):**  
+  - [RBI Reports](https://www.rbi.org.in/)  
+- **Statista (Reference Source):**  
+  - [Statista Unemployment Stats](https://www.statista.com/)  
+
+---
+
+## ** 5. Wage Data**
+- **JSTOR (1960-1983 Historical Data):**  
+  - [JSTOR Wage Data](https://www.jstor.org/stable/4393994)  
+- **DataGov (2019-2021 Wage Levels):**  
+  - [DataGov Wage Dataset](https://www.data.gov.in/resource/year-wise-details-nominal-wage-levels-2019-2021)  
+- **Ministry of Labour and Employment (Primary Source):**  
+  - [Wage Statistics](https://labour.gov.in/wages-and-statistics)  
+  - [Wage Report PDF](https://labour.gov.in/sites/default/files/99-wri_pub_18102021.pdf)  
+
+---
+
+## ** 6. Labour Force Participation Rate (LFPR)**
+- **Ministry of Statistics and Programme Implementation (MOSPI) (Primary Source):**  
+  - [MOSPI LFPR Data](https://www.mospi.gov.in/labour-force-participation-rate-lfpr-cent-according-current-weekly-status-all-india-quarterly?utm_source=chatgpt.com)  
+  - [Annual LFPR Report (2023-24)](https://mospi.gov.in/sites/default/files/press_release/Press_note_AR_PLFS_2023_24_22092024.pdf?utm)  
+- **Government Press Release:**  
+  - [Press Release](https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1966154)  
+- **World Bank (LFPR Data Set):**  
+  - [World Bank LFPR Indicator](https://data.worldbank.org/indicator/SL.TLF.CACT.ZS?locations=IN)  
+
+---
+
+## **💻 How to Use**
+1. **Clone the Repository**  
+   ```bash
+   git clone https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis.git
