@@ -25,9 +25,9 @@ This project analyzes key economic indicators for India, including:
    - **[`Data Frame Code`](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/Code%20(data%20frame%20and%20visualization))**: Scripts for organizing data.  
    - **[`Missing Data Handling`](https://github.com/ahmedmujtaba24/ahmedmujtaba24-Consumer-Price-Index-Analysis/blob/main/missing%20data%20value%20/data%20processing)**: Scripts for interpolating missing values.
 - **`Report/`**: Final findings and insights.  
-  - **[Report](https://drive.google.com/file/d/1kAkN1ch3SVy5YpS5PNqdQxGRywwwf7Mn/view?usp=drive_link)**  
+  - **[Report](https://drive.google.com/file/d/11AmYs0KCnt2Utc4lHSss7IlkyGynTc1_/view?usp=drive_link)**  
 - **`Visuals/`**: Charts and graphs showcasing trends.  
-  - **[Visual Report](https://drive.google.com/file/d/19Ofx4QLmIJAC686UNN6n4FuUPUqNQtal/view?usp=drive_link)**  
+  - **[Visual Report](https://drive.google.com/file/d/1duNNTYrTxzFiBbTuwTU6ZblBEJIBKhAf/view?usp=drive_link)**  
 
 ---
 
